@@ -52,6 +52,24 @@ function logDetails(value: User | Person): void {
  }
 }
 
+//An alternative is to create another function that checks for "Type" which is called
+//in the logDetails function
+
+// function isUser(entity: User | Person): entity is User {
+//  if (entity !== null && typeof entity === "object" && "email" in entity) {
+//   return true;
+//  }
+//  return false;
+// }
+
+// function logDetails(value: User | Person): void {
+//  if (isUser(value)) {
+//   return console.log(value.email, value.username);
+//  }
+//  return console.log(value.firstname, value.age);
+// }
+
+
 const user: User = {
  type: "user",
  username: "Mario",
@@ -67,4 +85,4 @@ const person: Person = {
 };
 
 logDetails(user);
-logDetails(person)
+logDetails(person);
